@@ -9,6 +9,7 @@ import DDS.*;
 import OpenDDS.DCPS.*;
 import org.omg.CORBA.StringSeqHolder;
 import Messenger.*;
+//import choice.*;
 
 public class Both {
 
@@ -116,7 +117,13 @@ public class Both {
         int handle = mdw.register_instance(msg);
         msg.from = "OpenDDS-Java";
         msg.subject = "Review";
-        msg.text = "Worst. Movie. Ever.";
+        msg.text = "Best. Movie. Ever.";
+	msg.achoice = Choice.AVALUE;
+	msg.words = "BOTH: I can set values!";
+	System.out.println("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~");
+	System.out.println(msg.from);
+	System.out.println(msg.words);
+	System.out.println("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~");
         msg.count = 0;
         for (; msg.count < N_MSGS; ++msg.count) {
             int ret = mdw.write(msg, handle);

@@ -72,6 +72,10 @@ public class DataReaderListenerImpl extends DDS._DataReaderListenerLocalBase {
                 System.out.println("         from       = " + mh.value.from);
                 System.out.println("         count      = " + mh.value.count);
                 System.out.println("         text       = " + mh.value.text);
+		System.out.println("         words	= " + mh.value.words);
+		if (mh.value.achoice == Choice.AVALUE) System.out.println("         choice     = A");
+		else if (mh.value.achoice == Choice.BVALUE) System.out.println("         choice     = B");
+		else System.out.println("There was no valid choice value: " + mh.value.achoice);
                 System.out.println("SampleInfo.sample_rank = "
                                    + sih.value.sample_rank);
 

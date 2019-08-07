@@ -162,7 +162,13 @@ public class TestPublisher {
         msg.from = "OpenDDS-Java";
         msg.subject = "Review";
         msg.text = "Worst. Movie. Ever.";
+	msg.words = "I can set values!";
+	msg.achoice = Choice.AVALUE;
         msg.count = 0;
+	System.out.println("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~");
+	System.out.println(msg.from);
+	System.out.println(msg.words);
+	System.out.println("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~");
         int ret = RETCODE_TIMEOUT.value;
         for (; msg.count < N_MSGS; ++msg.count) {
             while ((ret = mdw.write(msg, handle)) == RETCODE_TIMEOUT.value) {

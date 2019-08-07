@@ -11,6 +11,11 @@ module Messenger {
 // but the file is copied here to more accurately reflect a
 // user's project setup.
 
+enum Choice {
+	AVALUE,
+	BVALUE
+};
+
 #pragma DCPS_DATA_TYPE "Messenger::Message"
 #pragma DCPS_DATA_KEY "Messenger::Message subject_id"
 
@@ -20,5 +25,7 @@ module Messenger {
     long subject_id;
     string text;
     long   count;
+    string words;
+    Choice achoice;
   };
 };
