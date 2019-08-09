@@ -71,7 +71,16 @@ void DataReaderListenerImpl::on_data_available(DDS::DataReader_ptr reader)
                   << "         subject_id = " << message.subject_id   << std::endl
                   << "         from       = " << message.from.in()    << std::endl
                   << "         count      = " << message.count        << std::endl
-                  << "         text       = " << message.text.in()    << std::endl;
+                  << "         text       = " << message.text.in()    << std::endl
+		  << "	       words	  = " << message.words.in()   << std::endl;
+	if (message.achoice == Messenger::Choice::AVALUE) {
+	   std::cout << "The choice value is A!" << std::endl;	
+	}
+	else if (message.achoice == Messenger::Choice::BVALUE) {
+	   std::cout << "The choice value is B!" << std::endl;	
+	} else {
+	   std::cout << "Yikes! The choice is not a choice at all." << std::endl;	
+	}
 
         if (std::string("Comic Book Guy") != message.from.in() &&
             std::string("OpenDDS-Java") != message.from.in()) {

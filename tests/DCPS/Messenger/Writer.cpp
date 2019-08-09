@@ -103,6 +103,8 @@ Writer::svc()
     message.subject      = "Review";
     message.text         = "Worst. Movie. Ever.";
     message.count        = 0;
+    message.words	 = "I can write values!";
+    message.achoice	 = Messenger::Choice::AVALUE;
 
     for (int i = 0; i < num_messages; i++) {
       DDS::ReturnCode_t error;
